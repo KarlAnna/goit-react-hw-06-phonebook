@@ -1,7 +1,7 @@
 {
   "name": "react-homework-template",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "homepage": "https://goitacademy.github.io/react-homework-template/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.2",
