@@ -33,7 +33,7 @@ export default function ContactForm() {
     }
 
     return (
-        <form className="form" onSubmit={formSubmitHandler}>
+        <form onSubmit={formSubmitHandler}>
             <label htmlFor="name">Name</label>
             <input
                 onChange={handleChange}
