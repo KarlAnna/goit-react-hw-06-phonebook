@@ -1,16 +1,21 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addContact } from '../../redux/contactsSlice';
 import '../Phonebook.css'
 
-export default function ContactForm({ onSubmit }) {
+export default function ContactForm() {
     const [name, setName] = useState('')
     const [number, setNumber] = useState('')
+    const dispatch = useDispatch()
 
     const formSubmitHandler = (e) => {
         e.preventDefault()
-        const { name, number } = e.target.elements;
-        onSubmit(name.value, number.value)
-        reset()
+
+        dispatch(addContact(name, number));
+
+        setName('')
+        setNumber('')
     }
 
     const handleChange = (e) => {
@@ -25,11 +30,6 @@ export default function ContactForm({ onSubmit }) {
             default:
                 break;
         }
-    }
-
-    const reset = () => {
-        setName('')
-        setNumber('')
     }
 
     return (
